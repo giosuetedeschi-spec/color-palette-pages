@@ -27,7 +27,7 @@ export const Route = createFileRoute("/game/$id")({
 const STATUS_OPTIONS: GameStatus[] = ["wishlist", "playing", "finished", "abandoned"];
 
 function GamePage() {
-  const game = Route.useLoaderData();
+  const { game } = Route.useLoaderData();
   const entry = useLibrary((s) => s.entries[game.id]);
   const setStatus = useLibrary((s) => s.setStatus);
   const setHours = useLibrary((s) => s.setHours);
