@@ -89,7 +89,7 @@ export function CatalogFiltersBar({
         <div className="mb-4 flex flex-wrap items-center gap-2">
           <span className="text-xs text-muted-foreground">{resultCount} risultati ·</span>
           {[...filters.genres.map((v) => ["genres" as const, v]), ...filters.tags.map((v) => ["tags" as const, v]), ...filters.platforms.map((v) => ["platforms" as const, v])].map(([key, value]) => (
-            <Chip key={`${key}-${value}`} onRemove={() => toggle(key, value as string)}>{value}</Chip>
+            <Chip key={`${key}-${value}`} onRemove={() => toggle(key as "genres" | "tags" | "platforms", value)}>{value}</Chip>
           ))}
           {filters.freeOnly && <Chip onRemove={() => update("freeOnly", false)}>Gratis</Chip>}
           {filters.minRating > 0 && <Chip onRemove={() => update("minRating", 0)}>≥ {filters.minRating} voto</Chip>}
