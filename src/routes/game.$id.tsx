@@ -19,7 +19,7 @@ export const Route = createFileRoute("/game/$id")({
   },
   head: ({ loaderData }) => ({
     meta: loaderData
-      ? [{ title: `${loaderData.name} — SteamStats` }, { name: "description", content: loaderData.shortDescription }]
+      ? [{ title: `${loaderData.game.name} — SteamStats` }, { name: "description", content: loaderData.game.shortDescription }]
       : [{ title: "Gioco" }],
   }),
 });
