@@ -70,7 +70,7 @@ function GamePage() {
             </div>
 
             <div className="mt-6 flex flex-wrap gap-2">
-              {game.tags.map((t) => (
+              {game.tags.map((t: string) => (
                 <span key={t} className="rounded-md border border-border bg-surface-2 px-2 py-1 text-xs">{t}</span>
               ))}
             </div>
