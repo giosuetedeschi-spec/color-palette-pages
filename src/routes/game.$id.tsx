@@ -45,7 +45,7 @@ function GamePage() {
         <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1fr_320px]">
           <div>
             <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-              {game.genres.map((g) => (
+              {game.genres.map((g: string) => (
                 <span key={g} className="rounded bg-surface-2 px-2 py-0.5">{g}</span>
               ))}
               <span>· {game.releaseYear} · {game.developer}</span>
