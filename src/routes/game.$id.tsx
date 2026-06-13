@@ -15,7 +15,7 @@ export const Route = createFileRoute("/game/$id")({
   loader: ({ params }) => {
     const game = GAMES.find((g) => g.id === Number(params.id));
     if (!game) throw notFound();
-    return game;
+    return { game };
   },
   head: ({ loaderData }) => ({
     meta: loaderData
